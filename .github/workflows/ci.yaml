@@ -10,6 +10,15 @@ jobs:
     steps:
     - run: |
         set -x
+        
+        docker --version || true
+        
+        docker-compose --version || true
+        
+        command -v docker || true
+        
+        command -v docker-compose || true
+        
         brew cask install docker
         # allow the app to run without confirmation
         xattr -d -r com.apple.quarantine /Applications/Docker.app
